@@ -8,6 +8,6 @@ A pkeyconfig file (resembling `pkeyconfig-xyz.xrm-ms`) is required to use this. 
 
 ## Credits
 
-Many thanks to @asdcorp for assistance in development and testing.
+Many thanks to [asdcorp](https://github.com/asdcorp) for assistance in development and testing.
 
-Additionally uses `keycutter.py` and `pkeyconfig.py`, developed by @awuctl.
+Additionally uses `keycutter.py` and `pkeyconfig.py`, developed by [awuctl](https://github.com/awuctl).
