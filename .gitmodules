@@ -1,0 +1,3 @@
+[submodule "licensing_stuff"]
+	path = licensing_stuff
+	url = https://github.com/awuctl/licensing-stuff.git
