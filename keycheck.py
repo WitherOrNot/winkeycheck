@@ -4,7 +4,7 @@ from random import randbytes
 from licensing_stuff.keycutter import ProductKeyDecoder
 from licensing_stuff.pkeyconfig import PKeyConfig
 from requests import post
-from datetime import datetime
+import datetime
 from html import escape
 from uuid import uuid4
 import xml.etree.ElementTree as ET
@@ -135,8 +135,8 @@ def query_key(pkey, pl_data, pkc, config_ext="Retail"):
         "binding": generate_binding(),
         "pkey": pkey,
         "act_config_id": escape(act_config_id),
-        "systime": format_timestamp(datetime.utcnow()),
-        "utctime": format_timestamp(datetime.utcnow()),
+        "systime": format_timestamp(datetime.datetime.now(datetime.UTC)),
+        "utctime": format_timestamp(datetime.datetime.now(datetime.UTC)),
         "secure_store_id": str(uuid4())
     }
     payload = REQ_TEMPLATE.format(**req_data)
