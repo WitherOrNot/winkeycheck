@@ -59,6 +59,9 @@ def encode_key_data(group, serial, security, upgrade):
     return b64encode(act_hash.to_bytes(13, "little")).decode()
 
 def query_key(pkey, pkc):
+    if "N" not in pkey:
+        return "N/A", "Product key is not PKEY2009.", False
+    
     pkey_data = ProductKeyDecoder(pkey)
     
     try:
