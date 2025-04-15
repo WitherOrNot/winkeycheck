@@ -67,7 +67,7 @@ def query_key(pkey, pkc):
     try:
         skuid = pkc.config_for_group(pkey_data.group).config_id[1:-1]
     except:
-        return "", "Product key not compatible with provided pkeyconfig", False
+        return "N/A", "Product key not compatible with provided pkeyconfig.", False
     
     act_data = encode_key_data(pkey_data.group, pkey_data.serial, pkey_data.security, pkey_data.upgrade)
     act_config_id = f"msft2009:{skuid}&{act_data}"
