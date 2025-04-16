@@ -233,15 +233,15 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description="Product key checker")
     sp = p.add_subparsers(title="Modes", dest="mode")
     
-    pkp = sp.add_parser("pkey", help="test single product key")
+    pkp = sp.add_parser("pkey", help="Test single product key")
     pkp.add_argument("product_key", type=str, help="Product key")
     
-    batchp = sp.add_parser("batch", help="test multiple product keys in a file")
-    batchp.add_argument("input_file", type=argparse.FileType("r", encoding="utf-8"), help="input file with one product key per line")
-    batchp.add_argument("--out", "-o", type=argparse.FileType("w", encoding="utf-8"), nargs="?", default="out.txt", help="output path of key checking log")
+    batchp = sp.add_parser("batch", help="Test multiple product keys in a file")
+    batchp.add_argument("input_file", type=argparse.FileType("r", encoding="utf-8"), help="Input file with one product key per line")
+    batchp.add_argument("--out", "-o", type=argparse.FileType("w", encoding="utf-8"), nargs="?", default="out.txt", help="Output path of key checking log")
     
     p.add_argument("--pkeyconfig", "-p", type=argparse.FileType("r", encoding="utf-8-sig"), nargs="?", default="pkeyconfig.xrm-ms", help="Required pkeyconfig.xrm-ms file")
-    p.add_argument("--consume", "-c", action="store_true")
+    p.add_argument("--consume", "-c", action="store_true", help="Consumes product key activation if specified")
     
     args = p.parse_args()
     
