@@ -16,6 +16,8 @@ Individual product keys can be checked like so: `python keycheck.py pkey <Produc
 
 For a given product key, the output will either show it as online-valid or will display error information from the server.
 
+By default, a less invasive check is used that doesn't catch all errors. To check for errors like `0xC004C020`, `0xC004C060`, or `0xC004C008`, use the `-c` option to test key consumption. Please note that this check will consume one activation if successful.
+
 A text file of product keys, one key per line, can be checked like so: `python keycheck.py batch <Keys File>`
 
 For batch activation, the list of valid keys will be printed at the end of the check. A full log containing error information will be saved to an output file (default `log.txt`)
